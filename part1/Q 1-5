@@ -1,0 +1,5 @@
+kubectl run nginx-pod-dor --image nginx:alpine
+kubectl run messaging --image redis:alpine --labels "tier=msg"
+kubectl create ns apx-x998-dor
+touch /tmp/nodes-dor.txt | kubectl get pods -o json >> /tmp/nodes-dor.txt
+kubectl create service clusterip messaging-service --tcp=6379:6379 | kubectl label service messaging-service tier=msg
