@@ -1,0 +1,13 @@
+kubectl set image deploy webapp nginx=nginx:1.100 
+
+a:  kubectl get pods
+
+b:  kubectl rollout undo deploy webapp
+    kubectl rollout status deploy webapp
+
+c:  kubectl rollout history deploy webapp --revision=7
+
+e:  kubectl set image deploy webapp nginx=nginx:latest
+    kubectl rollout history deploy webapp
+    
+    
